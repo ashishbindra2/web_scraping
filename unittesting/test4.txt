@@ -1,0 +1,44 @@
+
+------------------------------ task - 1 --------------------------------------------------------
+
+setUp(): open chrom browser
+test1(): test login functionality in google chrome
+tearDown(): close chrome browser
+
+setUp(): open firefox browser
+test2(): test login functionality in firefox chrome
+tearDown(): close firefox browser
+
+------------------------------ task - 2 --------------------------------------------------------
+
+test1: test login functionality in chrome with valid username and valid pwd
+test2: test login functionality in chrome with invalid username and invalid pwd
+
+------------------------------ task - 3 --------------------------------------------------------
+
+if you have 10 methods how many times following methods will be executed
+
+setUp() ---------> 10 times
+tearDown() ------> 10 times
+setUpClass() ----> 1 times
+tearDownClass() -> 1 times
+
+------------------------------ task - 4 --------------------------------------------------------
+Write a Python TestScript to test Google Search Functionality by using selenium unites ting?
+
+------------------------------ task - 5 --------------------------------------------------------
+
+https://practicetestautomation.com/practice-test-login/
+
+testing login and logout functionality of HMS application:
+
+setUpClass(): to launch firefox browser
+
+test_login()
+test_logout()
+
+tearDownClass(): to close the browser
+
+------------------------------ task - 6 --------------------------------------------------------
+
+
