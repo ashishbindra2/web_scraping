@@ -63,7 +63,7 @@ scrapy shell`
 To run a scrapy file
 `scrapy crawl filename`
 
-three diffenet way to work with url`
+three different way to work with url`
 Relative link: 
  `scrapy.Request(url=link)`
 
@@ -90,3 +90,13 @@ save data in json
 create a project 
 ---
 scrapy genspider project_name website_link 
+
+To get next page (pagination)
+---
+` if next_page_url:`
+`  yield response.follow(url.next_page_url,callback=self.parse)`
+
+scrapy took 98 sec for 60 pages when  we scraped the same website selenium will take 5 sec for 5 pages
+this is one reasons why scraping is preferred over Selenium
+
+
