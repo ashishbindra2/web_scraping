@@ -99,4 +99,36 @@ To get next page (pagination)
 scrapy took 98 sec for 60 pages when  we scraped the same website selenium will take 5 sec for 5 pages
 this is one reasons why scraping is preferred over Selenium
 
+Change the user agent
+---
+Website will easily know that we are using scrapy this is not good practice.
+So we have to change the user agent, so it looks that we are sending requests using chrome.
+
+1. we have to change user agent from the setting in our project
+2. we can also change header using DEFAULT_REQUEST_HEADER variable
+3. `scrapy.Request(url='',callback=self.parse,headers={'User-Agent':})`
+
+use this website for multiple user agents:
+https://explore.whatismybrowser.com/useragents/explore/
+
+
+`scrapy genspider -l`
+it will show available templates
+
+Available templates:
+---
+- basic
+- crawl
+- csvfeed
+- xmlfeed
+
+`scrapy genspider -t crawl transcript https://subslikescript.com/`
+
+Rule has three arguments
+1. allow/deny => want to extract a link
+2. callback => must be string
+3. follow => must be boolean
+4. restrict_xath
+
+LinkExtract object 
 

@@ -6,8 +6,58 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+from pymongo import MongoClient
+import logging
+import sqlite3
 
 
-class SpiderTutorialPipeline:
+class MongodbPipline:
+    collection_name = 'transcript'
+
+    def open_spider(self, spider):
+        logging.warning('Spyder Opened - Pipeline')
+        self.client = MongoClient("mongodb://localhost:27017")
+        self.db = self.client['My_Database']
+
+    def close_spider(self, spider):
+        logging.warning('Spyder Closed - Pipeline')
+        self.client.close()
+
     def process_item(self, item, spider):
+        self.db['transcript'].insert_one(item)
+        return item
+
+
+class SQLitePipline:
+    collection_name = 'transcript'
+
+    def open_spider(self, spider):
+        logging.warning('Spyder Opened - Pipeline')
+        try:
+            self.connection = sqlite3.connect('transcripts.db')
+            self.c = self.connection.cursor()
+
+            self.c.execute("CREATE TABLE transcripts("
+                           "title TEXT, "
+                           "plot TEXT,"
+                           "transcript TEXT,"
+                           "url TEXT)"
+                           )
+            self.connection.commit()
+        except sqlite3.OperationalError as e:
+            print("tabel not connected ", e)
+
+    def close_spider(self, spider):
+        logging.warning('Spyder Closed - Pipeline')
+        self.connection.close()
+
+    def process_item(self, item, spider):
+        self.c.execute("INSERT INTO transcripts (title,plot,transcript,url) VALUES(?,?,?,?)"
+                       , (
+                           item.get('title'),
+                           item.get('plot'),
+                           item.get('transcript'),
+                           item.get('url'),
+                       ))
+        self.connection.commit()
         return item
