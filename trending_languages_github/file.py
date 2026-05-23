@@ -1,0 +1,27 @@
+python_dict = {
+              "edges": [],
+
+        "nodes": [
+            {'id': '/microsoft/markitdown', 'description': 'Python tool for converting files and office documents to Markdown.', 'stars': '52,711', 'forks': '2,603', 'tags': ['markdown', 'pdf', 'openai', 'microsoft-office', 'autogen', 'langchain', 'autogen-extension'], 'language': 'Python', 'languages': {'Python': '99.4%', 'Dockerfile': '0.6%'}},
+            {'id': '/bytedance/UI-TARS', 'description': '', 'stars': '4,395', 'forks': '293', 'tags': ['research'], 'language': 'Python', 'languages': {'Python': '100.0%'}},
+            {'id': '/1Panel-dev/MaxKB', 'description': '💬 MaxKB is an open-source AI assistant for enterprise. It seamlessly integrates RAG pipelines, supports robust workflows, and provides MCP tool-use capabilities.', 'stars': '16,063', 'forks': '2,085', 'tags': ['chatbot', 'knowledgebase', 'rag', 'llm', 'langchain', 'pgvector', 'ollama', 'qwen2', 'maxkb', 'llama3', 'mcp-server', 'deepseek-r1'], 'language': 'Python', 'languages': {'Python': '53.0%', 'Vue': '33.4%', 'TypeScript': '12.3%', 'SCSS': '0.6%', 'JavaScript': '0.3%', 'HTML': '0.3%', 'Other0.1%': 'Other'}},
+            {'id': '/RVC-Boss/GPT-SoVITS', 'description': '1 min voice data can also be used to train a good TTS model! (few shot voice cloning)', 'stars': '44,856', 'forks': '4,986', 'tags': ['text-to-speech', 'tts', 'voice-cloning', 'vits', 'voice-clone', 'voice-cloneai'], 'language': 'Python', 'languages': {'Python': '97.3%', 'Jupyter Notebook': '1.0%', 'Cuda': '0.6%', 'Shell': '0.5%', 'C': '0.4%', 'Dockerfile': '0.1%', 'Other0.1%':   'Other'}},
+            
+            {'id': '/Byaidu/PDFMathTranslate', 'description': 
+                'PDF scientific paper translation with preserved formats - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/MCP/Docker/Zotero', 'stars': '21,622', 'forks': '1,832', 'tags': ['python', 'pdf', 'latex', 'translation', 'math', 'mcp', 'japanese', 'english', 'openai', 'translate', 'document', 'chinese', 'edit', 'modify', 'russian', 'korean', 'zotero', 'obsidian', 'pdf2zh'], 'language': 'Python', 'languages': {'Python': '98.8%', 'Other1.2%': 'Other'}},
+            
+            {'id': '/jumpserver/jumpserver', 'description': 
+                'JumpServer is an open-source Privileged Access Management (PAM) tool that provides DevOps and IT teams with on-demand and secure access to SSH, RDP, Kubernetes, Database and RemoteApp endpoints through a web browser.', 'stars': '27,213', 'forks': '5,459', 'tags': ['python', 'django', 'terminal', 'pam', 'ssh-server', 'teleport', 'bastion-host', 'jumpserver', 'cyberark'], 'language': 'Python', 'languages': {'Python': '94.5%', 'CSS': '5.0%', 'Other0.5%': 'Other'}},
+            
+            {'id': '/ansible/awx', 'description': 'AWX provides a web-based user interface, REST API, and task engine built on top of Ansible. It is one of the upstream projects for Red Hat Ansible Automation Platform.', 'stars': '14,533', 'forks': '3,504', 'tags': ['python', 'ansible', 'automation', 'django', 'reactjs', 'django-rest-framework', 'hacktoberfest', 'awx'], 'language': 'Python', 'languages': {'Python': '97.9%', 'Jinja': '0.8%', 'Makefile': '0.5%', 'Shell': '0.3%', 'HTML': '0.2%', 'CSS': '0.1%', 'Other0.2%': 'Other'}},
+            {'id': '/autogluon/autogluon', 'description': 'Fast and Accurate ML in 3 Lines of Code', 'stars': '8,698', 
+            'forks': '997', 'tags': ['python', 'data-science', 'machine-learning', 'natural-language-processing', 'computer-vision', 'deep-learning', 'time-series', 'scikit-learn', 'tabular-data', 'pytorch', 'forecasting', 'hyperparameter-optimization', 'ensemble-learning', 'object-detection', 'transfer-learning', 'structured-data', 'gluon', 'automl', 'automated-machine-learning', 'autogluon'], 'language': 'Python', 'languages': {'Python': '99.8%', 'Other0.2%': 'Other'}},
+            
+            {'id': '/oumi-ai/oumi', 'description': 'Everything you need to build state-of-the-art foundation models, end-to-end.', 'stars': '8,042', 'forks': '584', 'tags': [], 'language': 'Python', 'languages': {'Python': '84.2%', 'Jupyter Notebook': '14.3%', 'Shell': '1.1%', 'Other0.4%': 'Other'}},
+            {'id': '/D-Ogi/WatermarkRemover-AI', 'description': 'AI-Powered Watermark Remover using Florence-2 and LaMA Models: A Python application leveraging state-of-the-art deep learning models to effectively remove watermarks from images with a user-friendly PyQt6 interface.', 'stars': '302', 'forks': '68', 'tags':
+                ['dataset-creation', 'inpainting', 'watermark-remover', 'lama-cleaner', 'florence-2'], 'language': 'Python', 'languages': {'Python': '87.1%', 'Shell': '12.9%'}},
+            
+            {'id': '/airbytehq/airbyte', 'description': 'The leading data integration platform for ETL / ELT data pipelines from APIs, databases & files to data warehouses, data lakes & data lakehouses. Both self-hosted and Cloud-hosted.', 'stars': '17,932', 'forks': '4,468', 'tags': ['mysql', 'python', 'java', 'bigquery', 'data', 
+            'pipeline', 'etl', 'postgresql', 's3', 'snowflake', 'self-hosted', 'data-engineering', 'data-analysis', 'mssql', 'data-integration', 'data-collection', 'redshift', 'elt', 'data-pipeline', 'change-data-capture'], 'language': 'Python', 'languages': {'Python': '54.1%', 'Kotlin': '31.6%', 'Java': '12.9%', 'JavaScript': '0.6%', 'Shell': '0.3%', 'Jinja': '0.2%', 'Other0.3%': 'Other'}}
+]
+        }

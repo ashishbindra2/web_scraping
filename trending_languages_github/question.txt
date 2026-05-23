@@ -1,0 +1,68 @@
+Assignment: Analyzing Trending GitHub Repositories
+
+Goal: Develop a FastAPI application that fetches trending repositories from GitHub for a specified programming language and analyzes their characteristics, presenting the analysis in a structured JSON format suitable for graph visualization.
+
+Problem Description:
+
+You need to build an API endpoint that, given a programming language, scrapes the GitHub trending page for that language, extracts information about the top repositories, and then performs a basic analysis of the relationships between these repositories based on their topics/tags.
+
+Core Requirements:
+
+1.  API Endpoint:
+    * Create a FastAPI endpoint `/analyze/github/trending/{language}` that accepts a programming language as a path parameter (e.g., `/analyze/github/trending/python`).
+
+2.  Web Scraping:
+    * When the endpoint is hit, your application should:
+        * Fetch the GitHub trending page for the specified language (e.g., `https://github.com/trending/python`).
+        * Use a library like `requests` to get the HTML content and `BeautifulSoup4` to parse it.
+        * Extract relevant information for each trending repository:
+            * Repository Name (owner/repo)
+            * Description
+            * Number of Stars
+            * Number of Forks
+            * Language (should match the query, but verify)
+            * Topics/Tags associated with the repository (if available on the trending page or by navigating to the repo's main page - be mindful of rate limiting if you choose the latter).
+
+3.  Data Processing and Analysis:
+    * Once you have the data for the trending repositories, perform a basic analysis of the relationships between them based on their shared topics/tags.
+    * For each pair of repositories, determine the number of common topics they share. This will represent a "connection strength" based on shared interests.
+
+4.  Output in Graph-like JSON Format:
+    * The API endpoint should return a JSON response that represents the analyzed data in a format suitable for visualizing as a graph. This format should include:
+        * Nodes: A list of dictionaries, where each dictionary represents a repository and includes its name, description, stars, forks, and language.
+        * Edges: A list of dictionaries, where each dictionary represents a connection between two repositories and includes the `source` (repository name), `target` (repository name), and `weight` (number of shared topics). Only include edges where the weight is greater than zero.
+
+Example JSON Output:
+
+json
+{
+  "nodes": [
+    {"id": "owner1/repo1", "description": "...", "stars": 1234, "forks": 567, "language": "python"},
+    {"id": "owner2/repo2", "description": "...", "stars": 876, "forks": 234, "language": "python"},
+    {"id": "owner3/repo3", "description": "...", "stars": 543, "forks": 123, "language": "python"}
+    // ... more nodes
+  ],
+  "edges": [
+    {"source": "owner1/repo1", "target": "owner2/repo2", "weight": 2},
+    {"source": "owner1/repo1", "target": "owner3/repo3", "weight": 1}
+    // ... more edges
+  ]
+}
+```
+
+Technical Requirements:
+
+* Use Python 3 and FastAPI.
+* Use `requests` for fetching web pages.
+* Use `BeautifulSoup4` for parsing HTML.
+* Structure your FastAPI application appropriately.
+* Handle potential errors during web scraping (e.g., network issues, changes in GitHub's HTML structure).
+* Be mindful of ethical web scraping practices and avoid making excessive requests to GitHub. Implement a reasonable delay between requests if you choose to scrape individual repository pages for topics.
+
+IMPORTANT
+
+Advanced Similarity Analysis: Implement an alternative method to measure the similarity between repositories beyond just counting shared topics. You are encouraged to leverage the ChatGPT API (or another suitable NLP service) to analyze repository descriptions and quantify their semantic similarity. Include this similarity score as an optional or additional weight in the "edges" of your graph data.
+
+Frontend Visualization Awareness: While not requiring a full frontend implementation, consider how the generated JSON data would be used by a JavaScript graph visualization library (such as D3.js, Cytoscape.js, or Vis.js) to render an interactive graph. Briefly describe the structure of your JSON output with this in mind.
+
+Caching Implementation: Implement a simple caching mechanism to store the results of fetching and analyzing trending repositories for a specific language. This should prevent redundant scraping of GitHub within a reasonable timeframe.
